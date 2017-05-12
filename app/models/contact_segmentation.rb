@@ -1,0 +1,2 @@
+class ContactSegmentation < ApplicationRecord
+end

@@ -1,0 +1,22 @@
+<%= form_with(model: contact_segmentation, local: true) do |form| %>
+  <% if contact_segmentation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact_segmentation.errors.count, "error") %> prohibited this contact_segmentation from being saved:</h2>
+
+      <ul>
+      <% contact_segmentation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :contact_segmentation_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
