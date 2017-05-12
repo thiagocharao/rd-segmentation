@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20170512175111) do
   end
 
   create_table "filter_conditions", force: :cascade do |t|
-    t.string "attribute"
+    t.string "field"
     t.string "comparator"
     t.string "value"
     t.integer "contact_segmentation_id", null: false

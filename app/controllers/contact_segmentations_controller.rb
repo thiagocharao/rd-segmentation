@@ -58,6 +58,6 @@ class ContactSegmentationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_segmentation_params
-      params.require(:contact_segmentation).permit(:description, filter_conditions: [:attribute, :comparator, :value])
+      params.require(:contact_segmentation).permit(:description, filter_conditions_attributes: [:field, :comparator, :value])
     end
 end
