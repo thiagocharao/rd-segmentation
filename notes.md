@@ -15,9 +15,12 @@ https://rvm.io/rvm/basics
 http://fgimian.github.io/blog/2012/12/08/setting-up-virtual-development-environments-for-ruby/
 http://api.rubyonrails.org
 http://guides.rubyonrails.org
+https://devcenter.heroku.com/articles/getting-started-with-rails5
 https://we.riseup.net/rails/basic-crudy-mvc
 https://launchschool.com/blog/integrating-rails-and-bootstrap-part-1https://github.com/seyhunak/twitter-bootstrap-rails
 https://github.com/rails/jquery-rails
+https://rubyplus.com/articles/3681-Complex-Forms-in-Rails-5
+https://www.viget.com/articles/exploring-the-inverse-of-option-on-rails-model-associations
 
 ## Remember
 rake db:drop db:create db:migrate
