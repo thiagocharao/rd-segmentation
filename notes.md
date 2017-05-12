@@ -14,6 +14,7 @@ rake db:migrate
 https://rvm.io/rvm/basics
 http://fgimian.github.io/blog/2012/12/08/setting-up-virtual-development-environments-for-ruby/
 http://api.rubyonrails.org
+http://guides.rubyonrails.org
 https://we.riseup.net/rails/basic-crudy-mvc
 https://launchschool.com/blog/integrating-rails-and-bootstrap-part-1https://github.com/seyhunak/twitter-bootstrap-rails
 https://github.com/rails/jquery-rails
