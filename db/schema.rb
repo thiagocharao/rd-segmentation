@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512010000) do
+ActiveRecord::Schema.define(version: 20170512175111) do
+
+  create_table "contact_segmentations", force: :cascade do |t|
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -20,6 +26,16 @@ ActiveRecord::Schema.define(version: 20170512010000) do
     t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "filter_conditions", force: :cascade do |t|
+    t.string "attribute"
+    t.string "comparator"
+    t.string "value"
+    t.integer "contact_segmentation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_segmentation_id"], name: "index_filter_conditions_on_contact_segmentation_id"
   end
 
 end
