@@ -1,5 +1,6 @@
 class ContactSegmentationsController < ApplicationController
   before_action :set_contact_segmentation, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :null_session
 
   def index
     @contact_segmentations = ContactSegmentation.all
@@ -57,6 +58,6 @@ class ContactSegmentationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_segmentation_params
-      params.require(:contact_segmentation).permit(:description)
+      params.require(:contact_segmentation).permit(:description, filter_conditions: [:attribute, :comparator, :value])
     end
 end
