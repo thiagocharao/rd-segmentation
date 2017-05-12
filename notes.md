@@ -21,6 +21,7 @@ https://launchschool.com/blog/integrating-rails-and-bootstrap-part-1https://gith
 https://github.com/rails/jquery-rails
 https://rubyplus.com/articles/3681-Complex-Forms-in-Rails-5
 https://www.viget.com/articles/exploring-the-inverse-of-option-on-rails-model-associations
+https://github.com/nixme/pry-nav                 DEBUG!@!@!!🙏
 
 ## Remember
 rake db:drop db:create db:migrate
