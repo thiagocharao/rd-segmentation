@@ -33,3 +33,24 @@ Contact.create(name: 'Brandy D. Cantor', email: 'brandy_d_cantor@google.com', ag
 Contact.create(name: 'Brighton Early', email: 'brighton_early@google.com', age: 28, state: 'PI', role: 'Software Engineer')
 Contact.create(name: 'Brock Lee', email: 'brock_lee@google.com', age: 18, state: 'RS', role: 'QA')
 Contact.create(name: 'Brooke Trout', email: 'brooke_trout@google.com', age: 24, state: 'RS', role: 'CEO')
+
+
+ContactSegmentation.create(description: 'Managers named Bill',
+                           filter_conditions_attributes: [
+                               {"mandatory": true, "field": "name", "comparator": "~", "value": "Bill"},
+                               {"mandatory": true, "field": "role", "comparator": "=", "value": "Manager"},
+                               {"mandatory": false, "field": "age", "comparator": ">", "value": "18"}
+                           ])
+ContactSegmentation.create(description: 'Older than 30',
+                           filter_conditions_attributes: [
+                               {"mandatory": true, "field": "age", "comparator": ">", "value": "30"}
+                           ])
+ContactSegmentation.create(description: 'Yahoo  email users',
+                           filter_conditions_attributes: [
+                               {"mandatory": true, "field": "email", "comparator": "~", "value": "yahoo.com"}
+                           ])
+ContactSegmentation.create(description: 'QAs in RS and SC',
+                           filter_conditions_attributes: [
+                               {"mandatory": true, "field": "state", "comparator": "=", "value": "RS"},
+                               {"mandatory": false, "field": "state", "comparator": "=", "value": "SC"}
+                           ])
