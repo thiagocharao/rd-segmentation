@@ -17,10 +17,14 @@
         <td><%= link_to contact_segmentation.id, contact_segmentation_path(contact_segmentation) %></td>
         <td><%= contact_segmentation.description %></td>
         <td>
-          <% for filter_condition in contact_segmentation.filter_conditions %>
-            <%= if filter_condition.mandatory then "AND" else "OR" end %>
+          <% first_one=true %>
+          <% for filter_condition in contact_segmentation.filter_conditions do %>
+            <% if not first_one %>
+              <b><%= if filter_condition.mandatory then "and" else "or" end %></b>
+            <% end %>
+            <% first_one = false %>
             <%= filter_condition.field %>
-            <%= filter_condition.comparator %>
+            <b><%= FilterCondition::COMPARATORS[filter_condition.comparator] %></b>
             <%= filter_condition.value %>
             </br>
           <% end %>

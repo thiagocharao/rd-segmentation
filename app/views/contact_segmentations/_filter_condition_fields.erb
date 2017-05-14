@@ -1,7 +1,7 @@
 <div class="form-inline nested-fields">
     <%= f.select :mandatory, [['AND', true], ['OR', false]], :class => 'form-check-input' %>
     <%= f.select :field, Contact.comparable_fields.keys ,:class => 'form-control' %>
-    <%= f.select :comparator, FilterCondition::COMPARATORS, {}, {class: 'form-select'} %>
+    <%= f.select :comparator, FilterCondition::COMPARATORS.map{|k,v| [v, k]}, {}, {class: 'form-select'} %>
     <%= f.text_field :value, :class => 'form-control input-sm' %>
     <%= link_to_remove_association("remove", f, :class => 'btn btn-default btn-sm') %>
     <hr class="half-rule" />
