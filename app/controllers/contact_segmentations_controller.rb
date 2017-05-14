@@ -22,7 +22,7 @@ class ContactSegmentationsController < ApplicationController
 
     respond_to do |format|
       if @contact_segmentation.save
-        format.html { redirect_to action: "index", notice: 'Contact segmentation was successfully created.' }
+        format.html { redirect_to action: "index"}
         format.json { render :show, status: :created, location: @contact_segmentation }
       else
         format.html { render :new }

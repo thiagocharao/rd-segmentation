@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  email: MyString
-  age: 1
-  state: MyString
-  role: MyString
+  name: Anna
+  email: anna@google.com
+  age: 28
+  state: RS
+  role: Manager
 
 two:
-  name: MyString
-  email: MyString
-  age: 1
-  state: MyString
-  role: MyString
+  name: Donald Trump
+  email: asshole@whitehouse.com
+  age: 97
+  state: DC
+  role: President

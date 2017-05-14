@@ -3,6 +3,7 @@ require 'test_helper'
 class ContactSegmentationsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @contact_segmentation = contact_segmentations(:one)
+    @filter_conditions = [filter_conditions(:one)]
   end
 
   test "should get index" do
@@ -17,10 +18,10 @@ class ContactSegmentationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create contact_segmentation" do
     assert_difference('ContactSegmentation.count') do
-      post contact_segmentations_url, params: { contact_segmentation: { description: @contact_segmentation.description } }
+      post contact_segmentations_url, params: { contact_segmentation: { description: "new one", filter_conditions_attributes: @filter_conditions } }
     end
 
-    assert_redirected_to contact_segmentation_url(ContactSegmentation.last)
+    assert_redirected_to contact_segmentations_path
   end
 
   test "should show contact_segmentation" do

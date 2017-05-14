@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  attribute: MyString
-  comparator:
-  value: MyString
+  field: name
+  comparator: =*
+  value: Anna
   contact_segmentation: one
 
 two:
-  attribute: MyString
-  comparator:
-  value: MyString
+  field: name
+  comparator: =
+  value: Donald Trump
   contact_segmentation: two
