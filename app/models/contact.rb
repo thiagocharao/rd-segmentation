@@ -7,18 +7,29 @@ class Contact < ApplicationRecord
   end
 
   def self.filter(filter_conditions)
-    fields = Contact.comparable_fields
-
-    search_context = Ransack::Context.for(Contact)
-    conditions = []
+    fields_and_types = self.comparable_fields
+    values = []
+    conditions = ""
+    combinator = ""
     for fc in filter_conditions do
-      field_predicate = "%s_%s" % [fc.field, fc.comparator]
-      condition = Contact.ransack({field_predicate => fc.value}, context: search_context)
-      condition.combinator = if fc.mandatory then "and" else "or" end
-      conditions << condition
-    end
-    conditions = conditions.map { |search| Ransack::Visitor.new.accept(search.base) }
-    teste = Contact.joins(search_context.join_sources).where(conditions.reduce(&:or)).to_sql
+      if conditions != ""
+        combinator = if fc.mandatory then "AND" else "OR" end
+      end
 
+      if fields_and_types[fc.field] == :integer
+        conditions += "#{combinator} #{fc.field} #{fc.comparator} #{fc.value} "
+      elsif fields_and_types[fc.field] == :string
+        if fc.comparator != "=="
+          conditions += "#{combinator} #{fc.field} LIKE ? "
+          left_symbol = if ["%%", "*="].include?(fc.comparator) then "%" else "" end
+          right_symbol = if ["%%", "=*"].include?(fc.comparator) then "%" else "" end
+          values << left_symbol + "#{fc.value}" + right_symbol
+        else
+          conditions += "#{combinator} #{fc.field} = ? "
+          values << "#{fc.value}"
+        end
+      end
+    end
+    Contact.where(values.insert(0, conditions))
   end
 end
