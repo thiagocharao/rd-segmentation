@@ -2,12 +2,30 @@
 
 one:
   field: name
-  comparator: =*
+  comparator: '=*'
   value: Anna
   contact_segmentation: one
 
 two:
   field: name
-  comparator: =
+  comparator: '='
   value: Donald Trump
   contact_segmentation: two
+
+three:
+  field: name
+  comparator: '*='
+  value: Buscape
+  contact_segmentation: three
+
+four:
+  field: age
+  comparator: '>='
+  value: 18
+  contact_segmentation: three
+
+five:
+  field: name
+  comparator: '*='
+  value: Buscape
+  contact_segmentation: four

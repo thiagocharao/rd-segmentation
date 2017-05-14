@@ -13,3 +13,46 @@ two:
   age: 97
   state: DC
   role: President
+
+three:
+  name: Bill Buscape
+  email: family@buscape.com
+  age: 12
+  state: RS
+  role: Student
+
+four:
+  name: Ralph Buscape
+  email: family@buscape.com
+  age: 17
+  state: SC
+  role: Student
+
+
+five:
+  name: Many Buscape
+  email: family@buscape.com
+  age: 18
+  state: RS
+  role: Software Developer
+
+six:
+  name: Chuck Buscape
+  email: family@buscape.com
+  age: 25
+  state: SP
+  role: QA
+
+seven:
+  name: Billy Buscape
+  email: family@buscape.com
+  age: 22
+  state: RJ
+  role: PO
+
+eight:
+  name: Rose Buscape
+  email: family@buscape.com
+  age: 45
+  state: BA
+  role: Manager

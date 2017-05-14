@@ -7,7 +7,7 @@ class ContactSegmentationsController < ApplicationController
   end
 
   def show
-    @contacts = Contact.filter(@contact_segmentation.filter_conditions)
+    @contacts = Contact.where(@contact_segmentation.build_where_clause_conditions)
     respond_to do |format|
       format.html { render :show }
       format.json { render :show, json: {
