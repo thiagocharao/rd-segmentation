@@ -8,6 +8,12 @@ class ContactSegmentationsController < ApplicationController
 
   def show
     @contacts = Contact.filter(@contact_segmentation.filter_conditions)
+    respond_to do |format|
+      format.json { render :show, json: {
+        "segmentation" => @contact_segmentation,
+        "filter_conditions" => @contact_segmentation.filter_conditions,
+        "contacts" => @contacts}, :except => [:created_at, :updated_at] }
+    end
   end
 
   def new
