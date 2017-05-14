@@ -1,7 +1,8 @@
 <div class="form-inline nested-fields">
-    Mandatory: <%= f.check_box :mandatory, :class => 'form-check-input' %>
-    Field: <%= f.text_field :field, :class => 'form-control' %>
-    Comparator: <%= f.text_field :comparator, :class => 'form-control' %>
-    Value: <%= f.text_field :value, :class => 'form-control' %>
+    <%= f.select :mandatory, [['AND', true], ['OR', false]], :class => 'form-check-input' %>
+    <%= f.select :field, Contact.comparable_fields.keys ,:class => 'form-control' %>
+    <%= f.select :comparator, FilterCondition::COMPARATORS, {}, {class: 'form-select'} %>
+    <%= f.text_field :value, :class => 'form-control input-sm' %>
     <%= link_to_remove_association("remove", f, :class => 'btn btn-default btn-sm') %>
+    <hr class="half-rule" />
 </div>
