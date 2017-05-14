@@ -25,6 +25,9 @@ https://github.com/nixme/pry-nav                 DEBUG!@!@!!🙏
 http://edgeapi.rubyonrails.org/classes/ActionController/StrongParameters.html
 https://github.com/nathanvda/cocoon
 https://github.com/nathanvda/cocoon/wiki/ERB-examples
+https://makandracards.com/makandra/20093-how-to-find-out-the-type-of-a-model-s-attribute
+https://github.com/activerecord-hackery/ransack
+http://stackoverflow.com/questions/1407451/calling-a-function-from-a-string-with-the-functions-name-in-ruby
 
 ## Remember
 rake db:drop db:create db:migrate

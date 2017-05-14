@@ -7,6 +7,7 @@ class ContactSegmentationsController < ApplicationController
   end
 
   def show
+    @contacts = Contact.filter(@contact_segmentation.filter_conditions)
   end
 
   def new

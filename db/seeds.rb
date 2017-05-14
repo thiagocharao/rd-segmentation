@@ -37,20 +37,20 @@ Contact.create(name: 'Brooke Trout', email: 'brooke_trout@google.com', age: 24, 
 
 ContactSegmentation.create(description: 'Managers named Bill',
                            filter_conditions_attributes: [
-                               {"mandatory": true, "field": "name", "comparator": "~", "value": "Bill"},
-                               {"mandatory": true, "field": "role", "comparator": "=", "value": "Manager"},
-                               {"mandatory": false, "field": "age", "comparator": ">", "value": "18"}
+                               {"mandatory": true, "field": "name", "comparator": "start", "value": "Bill"},
+                               {"mandatory": true, "field": "role", "comparator": "eq", "value": "Manager"},
+                               {"mandatory": true, "field": "age", "comparator": "gt", "value": "18"}
                            ])
 ContactSegmentation.create(description: 'Older than 30',
                            filter_conditions_attributes: [
-                               {"mandatory": true, "field": "age", "comparator": ">", "value": "30"}
+                               {"mandatory": true, "field": "age", "comparator": "gt", "value": "30"}
                            ])
 ContactSegmentation.create(description: 'Yahoo  email users',
                            filter_conditions_attributes: [
-                               {"mandatory": true, "field": "email", "comparator": "~", "value": "yahoo.com"}
+                               {"mandatory": true, "field": "email", "comparator": "end", "value": "yahoo.com"}
                            ])
 ContactSegmentation.create(description: 'QAs in RS and SC',
                            filter_conditions_attributes: [
-                               {"mandatory": true, "field": "state", "comparator": "=", "value": "RS"},
-                               {"mandatory": false, "field": "state", "comparator": "=", "value": "SC"}
+                               {"mandatory": true, "field": "state", "comparator": "eq", "value": "RS"},
+                               {"mandatory": false, "field": "state", "comparator": "eq", "value": "SC"}
                            ])
