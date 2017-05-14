@@ -3,12 +3,13 @@ class ContactSegmentationsController < ApplicationController
   protect_from_forgery with: :null_session
 
   def index
-    @contact_segmentations = ContactSegmentation.all
+    @contact_segmentations = ContactSegmentation.includes(:filter_conditions)
   end
 
   def show
     @contacts = Contact.filter(@contact_segmentation.filter_conditions)
     respond_to do |format|
+      format.html { render :show }
       format.json { render :show, json: {
         "segmentation" => @contact_segmentation,
         "filter_conditions" => @contact_segmentation.filter_conditions,
