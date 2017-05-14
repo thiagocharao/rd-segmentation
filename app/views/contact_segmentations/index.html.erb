@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:filter_conditions) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +16,15 @@
       <tr>
         <td><%= link_to contact_segmentation.id, contact_segmentation_path(contact_segmentation) %></td>
         <td><%= contact_segmentation.description %></td>
-        <td><%=l contact_segmentation.created_at %></td>
+        <td>
+          <% for filter_condition in contact_segmentation.filter_conditions %>
+            <%= if filter_condition.mandatory then "AND" else "OR" end %>
+            <%= filter_condition.field %>
+            <%= filter_condition.comparator %>
+            <%= filter_condition.value %>
+            </br>
+          <% end %>
+        </td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       contact_segmentation_path(contact_segmentation), :class => 'btn btn-default btn-xs' %>

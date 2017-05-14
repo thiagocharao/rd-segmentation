@@ -22,6 +22,9 @@ https://github.com/rails/jquery-rails
 https://rubyplus.com/articles/3681-Complex-Forms-in-Rails-5
 https://www.viget.com/articles/exploring-the-inverse-of-option-on-rails-model-associations
 https://github.com/nixme/pry-nav                 DEBUG!@!@!!🙏
+http://edgeapi.rubyonrails.org/classes/ActionController/StrongParameters.html
+https://github.com/nathanvda/cocoon
+https://github.com/nathanvda/cocoon/wiki/ERB-examples
 
 ## Remember
 rake db:drop db:create db:migrate
@@ -31,3 +34,6 @@ rails g bootstrap:themed Contact
 
 # Had to install postgres
 brew install postgres
+
+
+I don't know best practices when breaking code lines, like PEP8.

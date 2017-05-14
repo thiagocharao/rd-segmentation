@@ -31,6 +31,7 @@ class ContactSegmentationsController < ApplicationController
   end
 
   def update
+
     respond_to do |format|
       if @contact_segmentation.update(contact_segmentation_params)
         format.html { redirect_to @contact_segmentation, notice: 'Contact segmentation was successfully updated.' }
@@ -58,6 +59,6 @@ class ContactSegmentationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_segmentation_params
-      params.require(:contact_segmentation).permit(:description, filter_conditions_attributes: [:field, :comparator, :value])
+      params.require(:contact_segmentation).permit(:description, filter_conditions_attributes: [:id, :mandatory, :field, :comparator, :value, :_destroy])
     end
 end

@@ -16,18 +16,26 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <%= f.label :description, :class => 'col-lg-1' %>
     <div class="col-lg-10">
       <%= f.text_field :description, :class => 'form-control' %>
     </div>
     <%=f.error_span(:description) %>
   </div>
-
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), contact_segmentations_path, :class => 'btn btn-default' %>
+  <div class="form-group col-lg-10">
+    <h3>Filter Conditions</h3>
+    <%= f.fields_for :filter_conditions do |filter_condition| %>
+      <%= render 'filter_condition_fields', :f => filter_condition %>
+    <% end %>
+    <div class="form-group col-lg-10">
+      <%= link_to_add_association '', f, :filter_conditions, :class => 'btn btn-default glyphicon glyphicon-plus' %>
     </div>
+  </div>
+
+
+  <div class="form-group col-lg-10">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")), contact_segmentations_path, :class => 'btn btn-default' %>
   </div>
 
 <% end %>

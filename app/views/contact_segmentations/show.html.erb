@@ -6,6 +6,14 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @contact_segmentation.description %></dd>
+  <dd>
+    <dl class="dl-horizontal">
+      <% for filter_condition in @contact_segmentation.filter_conditions %>
+        <%= filter_condition.field %>
+      <% end %>
+    </dl>
+  </dd>
+
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

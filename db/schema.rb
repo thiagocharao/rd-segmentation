@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512175111) do
+ActiveRecord::Schema.define(version: 20170513144334) do
 
   create_table "contact_segmentations", force: :cascade do |t|
     t.text "description"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170512175111) do
     t.integer "contact_segmentation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "mandatory", default: true
     t.index ["contact_segmentation_id"], name: "index_filter_conditions_on_contact_segmentation_id"
   end
 

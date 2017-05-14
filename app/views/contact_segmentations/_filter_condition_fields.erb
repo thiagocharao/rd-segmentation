@@ -1,0 +1,7 @@
+<div class="form-inline nested-fields">
+    Mandatory: <%= f.check_box :mandatory, :class => 'form-check-input' %>
+    Field: <%= f.text_field :field, :class => 'form-control' %>
+    Comparator: <%= f.text_field :comparator, :class => 'form-control' %>
+    Value: <%= f.text_field :value, :class => 'form-control' %>
+    <%= link_to_remove_association("remove", f, :class => 'btn btn-default btn-sm') %>
+</div>
