@@ -19,14 +19,14 @@ class Contact < ApplicationRecord
       if fields_and_types[fc.field] == :integer
         conditions += "#{combinator} #{fc.field} #{fc.comparator} #{fc.value} "
       elsif fields_and_types[fc.field] == :string
-        if fc.comparator != "=="
+        if fc.comparator == "="
+          conditions += "#{combinator} #{fc.field} = ? "
+          values << "#{fc.value}"
+        else
           conditions += "#{combinator} #{fc.field} LIKE ? "
           left_symbol = if ["%%", "*="].include?(fc.comparator) then "%" else "" end
           right_symbol = if ["%%", "=*"].include?(fc.comparator) then "%" else "" end
-          values << left_symbol + "#{fc.value}" + right_symbol
-        else
-          conditions += "#{combinator} #{fc.field} = ? "
-          values << "#{fc.value}"
+          values <<  + "#{left_symbol}#{fc.value}#{right_symbol}"
         end
       end
     end
