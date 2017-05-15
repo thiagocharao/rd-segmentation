@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
-
+  protect_from_forgery with: :null_session
   # GET /contacts
   # GET /contacts.json
   def index
