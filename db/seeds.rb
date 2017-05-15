@@ -38,7 +38,7 @@ Contact.create(name: 'Brooke Trout', email: 'brooke_trout@google.com', age: 24, 
 ContactSegmentation.create(description: 'Managers named Bill',
                            filter_conditions_attributes: [
                                {"mandatory": true, "field": "name", "comparator": "=*", "value": "Bill"},
-                               {"mandatory": true, "field": "role", "comparator": "==", "value": "Manager"},
+                               {"mandatory": true, "field": "role", "comparator": "=", "value": "Manager"},
                                {"mandatory": true, "field": "age", "comparator": ">", "value": "18"}
                            ])
 ContactSegmentation.create(description: 'Older than 30',
@@ -51,6 +51,6 @@ ContactSegmentation.create(description: 'Yahoo  email users',
                            ])
 ContactSegmentation.create(description: 'QAs in RS and SC',
                            filter_conditions_attributes: [
-                               {"mandatory": true, "field": "state", "comparator": "==", "value": "RS"},
-                               {"mandatory": false, "field": "state", "comparator": "==", "value": "SC"}
+                               {"mandatory": true, "field": "state", "comparator": "=", "value": "RS"},
+                               {"mandatory": false, "field": "state", "comparator": "=", "value": "SC"}
                            ])
